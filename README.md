@@ -2,8 +2,11 @@
 常见的排序算法有冒泡排序、选择排序、插入排序、归并排序、快速排序、堆排序、希尔排序、计数排序、桶排序和基数排序。
 ## 冒泡排序
 冒泡排序（Bubble-sort）是一种简单的排序算法。它重复地走访要排序的数列，一次比较两个相邻元素，如果它们的大小顺序错误就把它们进行交换。这个算法的名字由来是因为越大的元素会经由交换慢慢“浮”到数列的顶端。
-时间复杂度为 <a href="https://www.codecogs.com/eqnedit.php?latex=T(n)=n^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?T(n)=n^2" title="T(n)=n^2" /></a>
-$T(n)=n^2$。
+时间复杂度为 
+'''html
+<a href="https://www.codecogs.com/eqnedit.php?latex=T(n)=n^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?T(n)=n^2" title="T(n)=n^2" /></a>
+'''
+。
 
 ## 选择排序
 选择排序（Selection-sort）是一种简单直观的排序算法。它的工作原理：首先在未排序序列中找到最大元素，存放到排序序列的最后位置，然后再从剩余未排序元素中继续寻找最大元素放到序列的末尾。以此类推，直到所有元素均排序完毕。时间复杂度为$T(n)=n^2$。
