@@ -23,7 +23,7 @@ void radixSort(std::vector<int>& seq);
 int main()
 {
 	int method = 10;
-	std::vector<int> n_seq{ 10, 100, 500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000};
+	std::vector<int> n_seq{ 10, 100, 500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000 };
 	const int seq_num = n_seq.size();
 	double** total_time;
 	total_time = new double* [seq_num];
