@@ -33,11 +33,11 @@
 桶排序是计数排序的升级版。假设输入数据服从均匀分布，将数据分到有限数量的桶里，每个桶内分别使用直接插入排序法进行排序，最后将所有不是空的桶里排好序的数据拼接起来。对N个元素的序列进行桶排序的时间复杂度分为两个部分：\
 (1) 循环计算序列中每个元素的桶映射函数，这个时间复杂度为O(n)；\
 (2) 利用先进的比较排序算法(直接插入排序)对每个桶内的所有数据进行排序，其时间复杂度为<a href="https://www.codecogs.com/eqnedit.php?latex=\sum_in_ilog_2{n_i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum_in_ilog_2{n_i}" title="\sum_in_ilog_2{n_i}" /></a>，其中<a href="https://www.codecogs.com/eqnedit.php?latex=n_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n_i" title="n_i" /></a>为第i个桶的数据量。\
-第(2)部分是桶排序性能好坏的决定因素。尽量增加桶的数量、减少桶内数据量是提高效率的唯一办法。因此需要尽量做到以下两点：
+第(2)部分是桶排序性能好坏的决定因素。尽量增加桶的数量、减少桶内数据量是提高效率的唯一办法。因此需要尽量做到以下两点：\
 a. 映射函数能够将n个数据平均分配到m个桶中，这样每个桶内有n/m个数据量；\
 b. 尽量增加桶的数量。极限情况下每个桶只能得到一个数据，这样可以完全避开桶内数据的“比较”排序操作。在数据量巨大的情况下，映射函数会使得桶集合的数量巨大，空间浪费严重。\
 对于n个待排数据，m个桶，平均每个桶n/m个数据的桶排序平均时间复杂度为：\
-<a href="https://www.codecogs.com/eqnedit.php?latex=\begin{aligned}&space;T(n)&=O(n)&plus;O(m\times&space;n/m\times&space;log_2&space;(n/m))&space;\\&space;&=O(n&plus;n(log_2n-log_2m))&space;\end{aligned}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{aligned}&space;T(n)&=O(n)&plus;O(m\times&space;n/m\times&space;log_2&space;(n/m))&space;\\&space;&=O(n&plus;n(log_2n-log_2m))&space;\end{aligned}" title="\begin{aligned} T(n)&=O(n)+O(m\times n/m\times log_2 (n/m)) \\ &=O(n+n(log_2n-log_2m)) \end{aligned}" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\begin{aligned}&space;T(n)&=O(n)&plus;O(m\times&space;n/m\times&space;log_2&space;(n/m))&space;\\&space;&=O(n&plus;n(log_2n-log_2m))&space;\end{aligned}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{aligned}&space;T(n)&=O(n)&plus;O(m\times&space;n/m\times&space;log_2&space;(n/m))&space;\\&space;&=O(n&plus;n(log_2n-log_2m))&space;\end{aligned}" title="\begin{aligned} T(n)&=O(n)+O(m\times n/m\times log_2 (n/m)) \\ &=O(n+n(log_2n-log_2m)) \end{aligned}" /></a> \
 当m=n时，即极限情况下的每个桶内只有一个数据，桶排序的最好效率能达到O(n)。\
 桶排序的平均时间复杂度为线性的O(n+c)，其中<a href="https://www.codecogs.com/eqnedit.php?latex=c=n(log_2n-log_2m)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?c=n(log_2n-log_2m)" title="c=n(log_2n-log_2m)" /></a>。如果相对于同样的n，桶数量m越大，其效率越高，最好的时间复杂度可以达到O(n)。桶排序的空间复杂度为O(n+m)，如果输入数据非常庞大，而桶的数量也非常多，则空间代价十分昂贵。
 
